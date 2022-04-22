@@ -4,7 +4,6 @@ export async function getImagedetails(loadId = 1) {
     try {
         res = await fetch(`https://jsonplaceholder.typicode.com/photos/${loadId}`);
         const imageDetails = await res.json();
-        console.log(imageDetails);
         return imageDetails;
     }
     catch (error) {
@@ -23,7 +22,6 @@ export function loadingTime() {
     // spinner
     const imageHTMLElement = document.getElementById('loadedPic');
     imageHTMLElement.style.display = 'none';
-    console.log(document.getElementById('spinnerId'));
     let spinnerState = document.getElementById('spinnerId');
     if (spinnerState == null) {
         let spinner = document.createElement('div');
@@ -31,7 +29,7 @@ export function loadingTime() {
         spinner.id = 'spinnerId';
         const mainContent = document.getElementById('mainContent');
         mainContent.append(spinner);
-    } else {
+    } else{
         const spinnerElement = document.getElementById('spinnerId');
         spinnerElement.style.display = 'block';
     }
